@@ -48,7 +48,6 @@ namespace SpaceStation_Forms
                     str = str.Replace($"[{key[i]}]", value[i]);
                 }
             }
-            MessageBox.Show("0");
             str = str.Replace("[Station]", B.StationNum);
             str = str.Replace("[Name]", B.Name);
             str = str.Replace("[Member]", B.Member);

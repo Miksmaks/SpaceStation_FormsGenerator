@@ -61,7 +61,7 @@ namespace SpaceStation_Forms
         {
             if (treeView1.SelectedNode != null) 
             {
-                if (treeView1.SelectedNode.Parent != null && treeView1.SelectedNode.Level == 2) 
+                if (treeView1.SelectedNode.Level == 1) 
                 {
                     foreach (Control k in ControlList)
                     {
@@ -189,20 +189,66 @@ namespace SpaceStation_Forms
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            treeView1.Nodes.Add("Forms v1");
-            treeView1.Nodes.Add("Forms v2");
-            // переделать
-            for (int i = 0; i < treeView1.Nodes.Count; i++) 
+            if (!Directory.Exists("Документы"))
             {
-                string[] mas = Directory.GetDirectories($"Документы\\{treeView1.Nodes[i].Text}");
-
-                for (int j = 0; j < mas.Length; j++)
+                Directory.CreateDirectory("Документы");
+                Directory.CreateDirectory("Документы\\Научный отдел");
+                Directory.CreateDirectory("Документы\\Инженерный отдел");
+                Directory.CreateDirectory("Документы\\Медицинский отдел");
+                Directory.CreateDirectory("Документы\\Отдел Командования");
+                Directory.CreateDirectory("Документы\\Отдел Службы Безопасности");
+                Directory.CreateDirectory("Документы\\Отдел Снабжения");
+                Directory.CreateDirectory("Документы\\Сервисный отдел");
+                Directory.CreateDirectory("Документы\\Юридический отдел");
+                Directory.CreateDirectory("Документы\\Иные документы");
+            }
+            else 
+            {
+                if (!Directory.Exists("Документы\\Научный отдел"))
                 {
-                    treeView1.Nodes[i].Nodes.Add(mas[j].Replace(mas[j].Remove(mas[j].LastIndexOf('\\')+1),""));
-                    foreach (string obj in Directory.GetFiles(mas[j]))
-                    {
-                        treeView1.Nodes[i].Nodes[j].Nodes.Add(obj.Replace($"Документы\\{treeView1.Nodes[i].Text}\\{treeView1.Nodes[i].Nodes[j].Text}\\", "").Replace(".xml", ""));
-                    }
+                    Directory.CreateDirectory("Документы\\Научный отдел");
+                }
+                if (!Directory.Exists("Документы\\Инженерный отдел"))
+                {
+                    Directory.CreateDirectory("Документы\\Инженерный отдел");
+                }
+                if (!Directory.Exists("Документы\\Медицинский отдел"))
+                {
+                    Directory.CreateDirectory("Документы\\Медицинский отдел");
+                }
+                if (!Directory.Exists("Документы\\Отдел Командования"))
+                {
+                    Directory.CreateDirectory("Документы\\Отдел Командования");
+                }
+                if (!Directory.Exists("Документы\\Отдел Службы Безопасности"))
+                {
+                    Directory.CreateDirectory("Документы\\Отдел Службы Безопасности");
+                }
+                if (!Directory.Exists("Документы\\Отдел Снабжения"))
+                {
+                    Directory.CreateDirectory("Документы\\Отдел Снабжения");
+                }
+                if (!Directory.Exists("Документы\\Сервисный отдел"))
+                {
+                    Directory.CreateDirectory("Документы\\Сервисный отдел");
+                }
+                if (!Directory.Exists("Документы\\Юридический отдел"))
+                {
+                    Directory.CreateDirectory("Документы\\Юридический отдел");
+                }
+                if (!Directory.Exists("Документы\\Иные документы"))
+                {
+                    Directory.CreateDirectory("Документы\\Иные документы");
+                }
+            }
+            string[] mas = Directory.GetDirectories($"Документы");
+
+            for (int j = 0; j < mas.Length; j++)
+            {
+                treeView1.Nodes.Add(mas[j].Replace(mas[j].Remove(mas[j].LastIndexOf('\\') + 1), ""));
+                foreach (string obj in Directory.GetFiles(mas[j]))
+                {
+                    treeView1.Nodes[j].Nodes.Add(obj.Replace($"Документы\\{treeView1.Nodes[j].Text}\\", "").Replace(".xml", ""));
                 }
             }
         }
