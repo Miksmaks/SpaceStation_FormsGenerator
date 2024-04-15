@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<main>
+  <write>
+    <write_line>
+		<name>Заявитель</name>
+		<type>SmallTextBoxAlt</type>
+		<attr>User</attr>
+	</write_line>
+	<write_line>
+		<name>Должность</name>
+		<type>SmallTextBoxAlt</type>
+		<attr>Job</attr>
+	</write_line>
+	<write_line>
+		<name>Нарушитель</name>
+		<type>SmallTextBox</type>
+		<attr>User2</attr>
+	</write_line>
+	<write_line>
+		<name>Описание</name>
+		<type>BigTextBox</type>
+		<attr>Reason</attr>
+	</write_line>
+	<write_line>
+		<name>Отдел получения</name>
+		<type>DepartComboBox</type>
+		<attr>DpTo</attr>
+	</write_line>
+  </write>
+  <text>
+                   Заявление в бюро доносов NanoTrasen
+--------------------------------------------------------------------------
+Номер станции: [Station]
+Заявитель: [User]
+Должность: [Job]
+
+Субъект правонарушения: [User2]
+Должность: [Job2]
+
+Нарушения по КЗ: [List1]
+Нарушения по СРП: [List2]
+Нарушения по ОЧП: [List3]
+
+Свидетели нарушений: [People]
+--------------------------------------------------------------------------
+Описание: [Reason]                                                                                                                                                                                                                                  --------------------------------------------------------------------------
+Жалоба была составлена мною в пребывании адекватного состояния. Все, расписанное в данной жалобе, готов подтвердить повторно, при необходимости.
+
+Запрос: [Point]	
+
+Подпись: [Signature]       Дата: [Clock]
+Печать:
+  </text>
+</main>
