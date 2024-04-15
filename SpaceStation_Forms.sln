@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceStation_Forms", "SpaceStation_Forms.csproj", "{FCF83A32-FFAF-4471-A1DC-53865E4FD68B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCF83A32-FFAF-4471-A1DC-53865E4FD68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF83A32-FFAF-4471-A1DC-53865E4FD68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF83A32-FFAF-4471-A1DC-53865E4FD68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF83A32-FFAF-4471-A1DC-53865E4FD68B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4956A4D-7988-4AC0-904D-4A2C3A8464C9}
+	EndGlobalSection
+EndGlobal
